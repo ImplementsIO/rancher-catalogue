@@ -1,6 +1,6 @@
 .catalog:
   name: "Janitor"
-  version: "v1.4.0"
+  version: "v1.8.0"
   description: "Docker cleanup"
   uuid: janitor-0
   questions: 
@@ -16,10 +16,16 @@
       default: janitor.exclude=true
       required: true
       type: "string"
-    - variable: "KEEP"
+    - variable: "KEEP_IMAGES"
       label: "Keep images"
       description: "A comma separated list of images that should never be removed"
-      default: "rancher/agent:v0.8.2,rancher/agent-instance:v0.6.0"
+      default: "rancher/agent:v1.0.1,rancher/agent-instance:v0.8.1"
       required: false
       type: "string"
+    - variable: "KEEP_CONTAINERS"
+      label: "Keep containers"
+      description: "A comma separated list of containers that should never be removed"
+      default: "mt-server"
+      required: false
+      type: "string"      
 
